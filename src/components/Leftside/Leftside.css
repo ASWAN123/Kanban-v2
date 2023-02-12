@@ -1,0 +1,29 @@
+.boards{
+    margin-top: 2px;
+    letter-spacing: 0.1rem;
+}
+
+.leftside{
+    min-width: 250px ;
+    max-height: 600px ;
+    border-right: 1px dashed black ;
+    /* border-bottom: 1px solid red; */
+}
+
+.addboard{
+    border: none;
+    background-color: transparent;
+    font-size: 18px ;
+    font-weight: 500 ;
+    padding: 3px 0 ;
+    text-align: start ;
+    border-radius: 0 25px 25px 0 ;
+    cursor: pointer ;
+    margin-top: 5px ;
+    margin-left: 10px ;
+}
+
+.addboard:hover{
+    color: darkolivegreen;
+    opacity: 0.9;
+}

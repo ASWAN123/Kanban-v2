@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+.logo{
+    min-width: 250px;
+    border-right: 1px dashed black;
+    text-align: center;
+    font-family: 'Source Sans Pro';
+    color: black;
+    font-weight: bold;
+    font-size: 50px;
+    padding: 5px 0 5px 0 ;
+    letter-spacing: 1.5px;
+}

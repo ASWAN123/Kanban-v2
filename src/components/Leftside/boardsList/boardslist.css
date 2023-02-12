@@ -1,0 +1,33 @@
+.boardslist{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+    padding-left: 10px;
+}
+
+.board-name {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 3px 5px;
+    border-radius: 0 25px 25px 0;
+    margin-right: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.board-icon{
+    background-color: transparent;
+}
+
+.board-name:not(.selected):hover{
+    background-color: rgb(163, 175, 143);
+    color: white;
+}
+
+.selected {
+    background-color: darkolivegreen;
+    color: white;
+}

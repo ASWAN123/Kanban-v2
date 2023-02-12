@@ -1,0 +1,84 @@
+.effects{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boardform{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding:20px 25px;
+    min-width: 350px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.form-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+}
+.group{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.group label{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.group input{
+    width: 95% ;
+    height: 20px ;
+    border: 1px solid gainsboro ;
+    outline: none ;
+    font-size: 16px ;
+    padding: 5px ;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.group input:focus{
+    border: 1px solid lightskyblue;
+}
+
+.input-columns{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.closebutton {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.addnewcolumn , .savebutton{
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.addnewcolumn{
+    color: black;
+    background-color: lightgray;
+}
+
+.savebutton{
+    color: white;
+    background-color: lightskyblue;
+}
+
