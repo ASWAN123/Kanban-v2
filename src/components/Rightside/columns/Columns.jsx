@@ -3,9 +3,8 @@ import { boardsContext } from '../../boardsContexts/boardsContext'
 import './Columns.css'
 import Tasks from './Tasks'
 
-function Columns(props) {
-    let columns = props.columns
-    const { setShowBoardForm} = useContext(boardsContext)
+function Columns() {
+    const { defaultboard ,  setShowBoardForm , setShowTaskForm} = useContext(boardsContext)
 
     const editBoard = ()=> {
         setShowBoardForm({title:'Add New Column' , show:true, order:"update"})
@@ -14,10 +13,10 @@ function Columns(props) {
     return (
         <div className='columns'>
             {
-                columns.map((column)=> {
+                defaultboard.columns.map((column)=> {
                     return <div key={column.id} className='column'>
                         <p key ={column.id} className='column-title'>{column.name} ({column.tasks.length})</p>
-                        <Tasks tasks = {column.tasks}/>
+                        <Tasks columnid = { column.id }  />
                     </div>
                 })
             }

@@ -55,14 +55,14 @@ function BoardForm() {
                         Newboard.columns.map((column)=> {
                             return <div className='input-columns' key={column.id}>
                                 <input disabled={column.tasks.length > 1 ? true : false}  type="text" onChange={(e)=>{updateColumnName(e , column.id)}} value={column.name} />
-                                {Newboard.columns.length > 1 && <AiOutlineClose className='closebutton' onClick={()=>{removeColumn(column.id)}} /> }
+                                {Newboard.columns.length > 1 && <AiOutlineClose disabled className={column.tasks.length > 1 ? 'closebutton withTasks':'closebutton' } onClick={()=>{removeColumn(column.id)}} /> }
                             </div>
                         })
                     }
                 </div>
 
                 <div className='group'>
-                    <button className='addnewcolumn'  onClick={(e)=>{addNewColumn(e)}} >Insert New Column</button>
+                    {Newboard.columns.length< 8 && <button className='addnewcolumn'  onClick={(e)=>{addNewColumn(e)}} >Insert New Column</button>}
                     <button className='savebutton' type='submit'>{order == 'create' ? 'Create New Board' : 'Save Changes'}</button>
                 </div>
 

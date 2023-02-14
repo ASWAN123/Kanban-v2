@@ -5,8 +5,8 @@
     position: absolute;
     top: 30%;
     left: 35%;
-    min-width: 350px;
-    max-width: 350px;
+    min-width: 400px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -17,9 +17,14 @@
 }
 
 .warning p {
-    font-size: 15px;
+    font-size: 14px;
 }
-
+.Board-title{
+    font-size: 15px;
+    font-weight: bold;
+    color:rgb(51, 110, 129) ;
+    letter-spacing: 0.5px;
+}
 .buttons{
     display: flex ;
     justify-content: space-between ;

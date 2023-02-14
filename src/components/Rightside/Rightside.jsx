@@ -5,11 +5,10 @@ import './Rightside.css'
 
 
 function Rightside() {
-    const {defaultboard , setDefaultboard} = useContext(boardsContext)
 
     return (
         <div className='rightside'>
-            <Columns columns = {defaultboard.columns} />
+            <Columns  />
         </div>
     )
 }
