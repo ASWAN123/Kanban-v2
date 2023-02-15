@@ -478,12 +478,22 @@ const data =  [
     ]
 
 export const getboards= ()=> {
-    let boards = JSON.parse(localStorage.getItem("data"))
-    if(boards == null ||  boards.length== 0 ){
-        localStorage.setItem('data' , JSON.stringify(data))
-        // console.log(data)
-        return data
-    }
-    // console.log(boards)
-    return boards
+    // let boards = JSON.parse(localStorage.getItem("data"))
+    // if(boards == null ||  boards.length== 0 ){
+    //     localStorage.setItem('data' , JSON.stringify(data))
+    //     return data
+    // }
+    let Newboards = data.map((board)=> {
+        let Newboard = {...board , id:'B'+board.id.toString()}
+        let NewColumns = Newboard.columns.map((column)=> {
+            let NewColumn = {...column, id:'C'+column.id.toString()}
+            let NewTasks = NewColumn.tasks.map((task)=> {
+                let NewTask = {...task , id:'T'+task.id.toString()}
+                return NewTask
+            })
+            return {...NewColumn , tasks:NewTasks}
+        } )
+        return {...Newboard , columns:NewColumns}
+    })
+    return Newboards ;
 }

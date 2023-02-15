@@ -4,7 +4,7 @@
     column-gap: 10px;
 }
 
-.column{
+.column , .tasks{
     max-width: 250px;
     min-width: 250px;
     border-radius: 25px ;
@@ -12,7 +12,7 @@
     flex-direction: column;
     gap: 5px;
     padding: 5px;
-    border: 1px dashed gainsboro;
+    /* border: 1px dashed gainsboro; */
     align-items: center;
     min-height: calc(100vh - 100px);
 }
@@ -45,20 +45,46 @@
 }
 
 .tasks{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     gap: 10px;
+    /* background-color: aquamarine; */
+    margin-bottom: auto;
 }
 .task{
     max-width: 230px;
     min-width: 230px;
     border: 1px dashed black;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .task h3{
     font-size: 16px;
     font-weight: bold;
+}
+
+.beready{
+    margin-top: 50px;
+}
+
+.hideme{
+    position: fixed;
+    top: -100rem;
+}
+
+.brown{
+    background-color: antiquewhite;
+}
+
+.moveslowdown{
+    margin-top: 80px;
+    /* transition: margin 200ms; */
+}
+.moveslowup{
+    margin-bottom: 80px;
+    /* transition: margin 100ms; */
 }

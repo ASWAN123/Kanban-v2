@@ -9,7 +9,7 @@ import BoardForm from './components/popups/BordForm/BoardForm';
 import ShowWarning from './components/popups/ShowWarning/showWarning';
 import TaskForm from './components/popups/TaskForm/TaskForm';
 import Rightside from "./components/Rightside/Rightside";
-import { getboards } from './data/data'
+import { getboards } from './data/data' ;
 
 
 function App() {
@@ -34,10 +34,6 @@ function App() {
     console.log(defaultboard  , 'updated')
   } , [defaultboard])
 
-  // useEffect(()=> {
-  //   setShowTaskForm({...showTaskForm , show:false})
-  //   setShowBoardForm({...showBoardForm , show:false})
-  // } , [hide])
 
   const [showwarning , setshowWarning ] = useState({show:false , title:'' , order:''})
 
