@@ -92,8 +92,12 @@
     letter-spacing: .1rem;
 }
 
+.effects-setting-ele button:nth-child(1){
+    color: var(--primary-text-color);
+}
 .effects-setting-ele button:nth-child(1):hover{
     opacity: 0.6;
+    color: var(--primary-text-color);
 }
 
 .effects-setting-ele button:nth-child(2){

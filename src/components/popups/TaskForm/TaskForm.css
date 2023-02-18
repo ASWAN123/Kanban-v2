@@ -44,10 +44,12 @@
     font-size: 18px;
     background-color: transparent;
     letter-spacing: .1rem;
+    color: var(--primary-text-color);
 }
 
 .effects-setting-task-ele button:nth-child(1):hover{
     opacity: 0.6;
+    color: var(--primary-text-color);
 }
 
 .effects-setting-task-ele button:nth-child(2){
@@ -127,6 +129,7 @@
     border-radius: 5px;
     resize: none;
     background-color: var(--background-color);
+    color: var(--primary-text-color);
 
 }
 
@@ -140,6 +143,7 @@
     display:flex ;
     gap: 5px ;
     align-items: center ;
+    color: var(--primary-text-color);
 }
 
 .input-viewtasks{
@@ -156,6 +160,7 @@
     margin: 0;
     background-color: var(--background-color);
     border: none;
+    color: var(--primary-text-color);
 }
 
 
@@ -192,6 +197,7 @@
     font-size: 16px;
     letter-spacing: 1px;
     background-color: var(--background-color);
+    color: var(--primary-text-color);
 }
 
 .viewmode{
@@ -200,7 +206,7 @@
 
 .completed{
     text-decoration: line-through;
-    color: grey;
+    color: var(--primary-text-color);
 }
 
 .validation{

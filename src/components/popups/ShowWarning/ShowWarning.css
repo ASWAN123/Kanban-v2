@@ -32,6 +32,7 @@
 
 .warning p {
     font-size: 14px;
+    color: var(--primary-text-color);
 }
 .Board-title{
     font-size: 18px;
