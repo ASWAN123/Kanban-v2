@@ -1,17 +1,63 @@
 .effects{
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: black; */
+    background-color:var(--effect-popup-color) ;
 }
+
+.effects-setting-task{
+    position: absolute ;
+    z-index: 9999;
+    top: 0 ;
+    left: 0 ;
+    background-color:transparent ;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+}
+
+.effects-setting-task-ele{
+    position: inherit;
+    z-index: 9999;
+    top: 4.8rem ;
+    right: 2.5rem ;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 10px 1px var(--dark-color);
+    border-radius: 5px;
+    gap: 15px;
+    align-items: flex-start;
+    width: 180px;
+    background-color: var(--background-color);
+}
+
+.effects-setting-task-ele button{
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: transparent;
+    letter-spacing: .1rem;
+}
+
+.effects-setting-task-ele button:nth-child(1):hover{
+    opacity: 0.6;
+}
+
+.effects-setting-task-ele button:nth-child(2){
+    color: lightcoral;
+}
+
 
 .taskform{
     position: relative;
-    border: 1px solid black;
+    opacity: 1;
     border-radius: 15px;
     padding:20px 25px;
     min-width: 400px;
@@ -19,18 +65,28 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 50px var(--dark-color);
+    background-color: var(--form-color);
 }
+
+
 
 .taskform .mysettingIcon{
     position: absolute;
     top: 1.5rem;
     right:1rem ;
+    opacity: 1;
 }
 
 .form-title{
     font-size: 20px;
     font-weight: bold;
     margin: 5px;
+    min-width:350px ;
+    max-width: 350px;
+    color: var(--primary-text-color);
+
 }
 .group{
     display: flex;
@@ -42,31 +98,35 @@
 .group label{
     font-size: 15px;
     font-weight: bold;
-    color: darkslategray;
+    color: var(--primary-text-color);
     margin-top: 5px;
     margin-bottom: 0;
+    letter-spacing: 0.1rem;
 }
 
 .group input{
     width: 97%;
     height: 20px ;
-    border: 1px solid gainsboro ;
+    border: 1px solid var(--border-color) ;
     outline: none ;
     font-size: 16px ;
     padding: 5px ;
     /* margin-top: 5px; */
     border-radius: 5px;
+    background-color:var(--background-color) ;
+    letter-spacing: .1rem;
 }
 
 .group textarea{
     flex: 1;
-    border: 1px solid gainsboro ;
+    border: 1px solid var(--border-color) ;
     outline: none ;
     font-size: 16px ;
     padding: 5px ;
     margin-top: 5px;
     border-radius: 5px;
     resize: none;
+    background-color: var(--background-color);
 
 }
 
@@ -87,16 +147,18 @@
     grid-template-columns: 25px 1fr;
     align-items: center;
     gap: 5px;
-    background-color: rgb(200, 227, 228);
+    background-color: var(--background-color);
     padding: 5px;
     border-radius: 5px;
 }
 
 .input-viewtasks input{
     margin: 0;
-    background-color: rgb(200, 227, 228);
+    background-color: var(--background-color);
     border: none;
 }
+
+
 
 .closebutton {
     font-size: 20px;
@@ -104,23 +166,23 @@
 }
 
 .addnewcolumn , .savebutton{
-    /* margin: 5px; */
     margin-left: 0;
     margin-right: 0;
     padding: 10px 15px;
     border-radius: 20px;
     cursor: pointer;
     border: none;
+    letter-spacing: 0.1rem;
 }
 
 .addnewcolumn{
     color: black;
-    background-color: lightgray;
+    background-color: var(--secondry-button);
 }
 
 .savebutton{
-    color: white;
-    background-color: lightskyblue;
+    color: var(--secondry-text-color);
+    background-color:var(--primary-button);
 }
 
 .column-dropdown{
@@ -129,6 +191,7 @@
     padding: 0 5px;
     font-size: 16px;
     letter-spacing: 1px;
+    background-color: var(--background-color);
 }
 
 .viewmode{
@@ -138,4 +201,23 @@
 .completed{
     text-decoration: line-through;
     color: grey;
+}
+
+.validation{
+    color:lightcoral;
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 0.3rem;
+}
+
+.group input::placeholder{
+    color:lightcoral;
+    font-size: 12px;
+    text-align: right;
+    padding: 10px;
+}
+
+.hideme{
+    display: none;
 }

@@ -1,9 +1,11 @@
 .rightside{
-    border-left: 1px dashed black;
+    /* border-left: 3px dashed black; */
     padding-left: 10px;
+    /* padding-right:20px ; */
     overflow: auto;
     max-height: calc(100vh - 80px);
     min-height: calc(100vh - 80px);
+    background-color: var(--background-color);
 }
 
 ::-webkit-scrollbar {

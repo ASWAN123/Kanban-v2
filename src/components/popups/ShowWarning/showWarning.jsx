@@ -26,7 +26,6 @@ function ShowWarning() {
             setDefaultboard(Newboards[0])
             setshowWarning({show:false , title:''})
         }
-
     }
     
     useEffect(()=> {
@@ -34,18 +33,25 @@ function ShowWarning() {
         setboards(Newboards)
     } , [defaultboard])
 
-
-
+    const closemenu =(e)=> {
+        if(e.target.className == 'effects'){
+            console.log(e.target.className)
+            setshowWarning({show:false , title:''})
+        }
+    }
 
 
     return (
-        <div className='warning'>
-            <h3 className='myorder'>{showwarning.order}</h3>
-            <p>Are you sure you want to delete the '<span className = "Board-title">{showwarning.title}</span>' board? This action will remove all columns and tasks and cannot be reversed.
-            </p>
-            <div className='buttons'>
-                <button className='Delete' onClick={deletejob}>Delete</button>
-                <button className='Cancel' onClick={()=>{setshowWarning({show:false , title:''})}}>Cancel</button>
+        <div className='effects' onClick={(e)=> {closemenu(e)}} >
+            <div className='warning'  >
+                
+                <h3 className='myorder'>{showwarning.order}</h3>
+                <p>Are you sure you want to delete the '<span className = "Board-title">{showwarning.title}</span>' board? This action will remove all columns and tasks and cannot be reversed.
+                </p>
+                <div className='buttons'>
+                    <button className='Delete' onClick={deletejob}>Delete</button>
+                    <button className='Cancel' onClick={()=>{setshowWarning({show:false , title:''})}}>Cancel</button>
+                </div>
             </div>
         </div>
     )

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 
 .header{
-    border-bottom: 1px dashed black;
+    /* border-bottom: 3px solid var(--border-color); */
     min-width: 100%;
     height: 75px;
     display: flex;
+    background-color: var(--background-color);
 }
 
 .header-menu{
@@ -14,23 +15,26 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
+    background-color: var(--header-menu-color);
 }
 
 .board-title{
     font-size: 30px ;
     font-weight: bold;
+    color:var(--primary-text-color) ;
 }
 
 .button-add-task{
-    background-color: #423a60;
-    font-size: 15px ;
-    padding: 10px 15px;
+    background-color: var(--primary-button);
+    font-size: 17px ;
+    padding: 10px 18px;
     border-radius: 25px;
     border: none;
     font-weight: 400;
-    color: white;
+    color: var(--secondry-text-color);
     margin-left: auto;
     cursor: pointer;
+    letter-spacing: 0.1rem;
 }
 .button-add-task:hover{
     opacity: 0.6 ;
@@ -40,37 +44,84 @@
     margin: 0 15px ;
     cursor: pointer;
     border-radius: 25px ;
-    font-size: 20px;
+    font-size: 28px;
     padding: 5px 0;
+    color: var(--primary-button);
+    /* color: var(--primarybutton-color); */
 }
 
 .mysettingIcon:hover{
     background-color: rgb(212, 230, 236);
 }
 
-.control-menu{
+.effects-setting{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:transparent ;
+}
+
+.effects-setting-ele{
     position: absolute ;
-    top: 4rem ;
-    right: 2rem ;
+    z-index: 9999;
+    top: 4.8rem ;
+    right: 2.5rem ;
     padding: 15px 20px;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 10px 1px var(--dark-color);
     border-radius: 5px;
-    gap: 10px;
+    gap: 15px;
     align-items: flex-start;
+    width: 180px;
+    background-color: var(--background-color);
 }
 
-.control-menu button{
+.effects-setting-ele button{
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    background-color: transparent;
+    letter-spacing: .1rem;
 }
 
-.control-menu button:nth-child(1):hover{
+.effects-setting-ele button:nth-child(1):hover{
     opacity: 0.6;
 }
 
-.control-menu button:nth-child(2){
+.effects-setting-ele button:nth-child(2){
     color: lightcoral;
+}
+
+
+.light-dark{
+    margin-left: 20px;
+    /* border: 1px solid black; */
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.sun , .moon {
+    font-size: 30px;
+}
+
+.moon{
+    color: darkslategray;
+    cursor: pointer;
+}
+
+.sun{
+    color:gold;
+    cursor: pointer;
 }

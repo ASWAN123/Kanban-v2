@@ -5,29 +5,38 @@
     gap: 5px;
     list-style: none;
     padding-left: 10px;
+    border-left: 3px solid var(--main-color) ;
+    margin-left: 10px;
+    height: 50vh;
 }
 
 .board-name {
+    border-left: 3px solid var(--light-color) ;
     font-size: 18px;
     font-weight: 500;
-    padding: 3px 5px;
+    padding: 7px 5px;
     border-radius: 0 25px 25px 0;
     margin-right: 15px;
     cursor: pointer;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    /* justify-content: center; */
     column-gap: 5px;
+    color: var(--light-color);
 }
 .board-icon{
     background-color: transparent;
+    margin-top: 3px;
 }
 
 .board-name:not(.selected):hover{
-    background-color: rgb(163, 175, 143);
+    background-color: var(--selected-color);
     color: white;
+    opacity: 0.8;
+    
 }
 
 .selected {
-    background-color: darkolivegreen;
+    background-color: var(--selected-color);
     color: white;
 }

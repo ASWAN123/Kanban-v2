@@ -1,6 +1,5 @@
 import { useState , useContext, useEffect } from 'react';
 import { BsController } from 'react-icons/bs';
-
 import './App.css'
 import { boardsContext } from './components/boardsContexts/boardsContext'
 import Header from "./components/Header/Header";
@@ -10,13 +9,13 @@ import ShowWarning from './components/popups/ShowWarning/showWarning';
 import TaskForm from './components/popups/TaskForm/TaskForm';
 import Rightside from "./components/Rightside/Rightside";
 import { getboards } from './data/data' ;
-
+import useLocalStorage from "use-local-storage";
 
 function App() {
 
   const [boards , setboards] = useState(getboards())
   const [defaultboard , setDefaultboard ] = useState(boards[0])
-  let [hide  , setHide] = useState(false)
+  const [theme, setTheme] = useLocalStorage("theme" ? 'dark':'light');
   
   const [showBoardForm , setShowBoardForm] = useState({
     title:'' ,
@@ -41,14 +40,14 @@ function App() {
   // ADD useeffect to update local storage with boards 
 
   return (
-    <div className="App">
-      <boardsContext.Provider value={{   showTaskForm , setShowTaskForm, showwarning , setshowWarning , showBoardForm , setShowBoardForm ,  defaultboard  , setDefaultboard, boards , setboards  }}>
-        <Header /> 
-        <Leftside /> 
-        <Rightside />
-        { showBoardForm.show && <BoardForm   /> }
+    <div className="App"  data-theme={theme}>
+      <boardsContext.Provider value={{ theme, setTheme ,  showTaskForm , setShowTaskForm, showwarning , setshowWarning , showBoardForm , setShowBoardForm ,  defaultboard  , setDefaultboard, boards , setboards  }}>
+        <Header       /> 
+        <Leftside    /> 
+        <Rightside  />
+        { showBoardForm.show && <BoardForm /> }
         { showwarning.show && <ShowWarning  /> }
-        { showTaskForm.show && <TaskForm   />}
+        { showTaskForm.show && <TaskForm    />}
       </boardsContext.Provider>
     </div>
   );

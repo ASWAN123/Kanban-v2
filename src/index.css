@@ -1,10 +1,69 @@
+
+/* :root { 
+    --background-color:#f4f4f4 ;
+    --tasks-color:#d3e0d7 ;
+    --primary-button:#625c66;
+    --secondry-button:#a9c4bb;
+    --primary-text-color:black;
+    --secondry-text-color:white;
+    --primary-border-color:#ebd0b5;
+    --form-color:  #d3e0d7;
+    --input-border: #625c66;
+    --checkbox-color: #d1866c;
+    --border-color: #d1866c;
+    --selected-color: #625c66;
+} */
+
+:root {
+    --dark-color:black ;
+    --light-color:white ;
+    --background-color:#eee ;
+    --header-color :#eee ;
+    --leftside-color:#04685e ;
+    --tasks-color:#d3e0d7 ;
+    --primary-button:#04685e;
+    --secondry-button:#a9c4bb;
+    --primary-text-color:black;
+    --secondry-text-color:white;
+    --primary-border-color:#3ec8bc;
+    --form-color:  #eee;
+    --input-border: #625c66;
+    --checkbox-color: #d1866c;
+    --border-color: #d1866c;
+    --selected-color: #a9c4bb;
+    --danger-button:lightcoral ;
+    --effect-popup-color:rgba(0,0,0,.50) ;
+    --dark-light: rgb(223, 227, 231) ;
+    --main-color:#FFF4A3 ;
+}
+
+
+[data-theme="dark"]{
+    --dark-color:black ;
+    --light-color:white ;
+    --leftside-color:#0a0b0d  ;
+    --header-menu-color: #0a0b0d ;
+    --primary-button:#3ec8bc;
+    --main-color:#3ec8bc ;
+    --secondry-button:#d8dbda;
+    --primary-text-color:white;
+    --secondry-text-color:black;
+    --form-color:  #1e1f23;
+    --background-color:#1e1f23;
+    --tasks-color:#0a0b0d ;
+    --effect-popup-color:rgba(61, 61, 61, 0.2) ;
+}
+
 *{
     margin: 0;
     padding: 0;
-    background-color: #FAFAFA;
-
 }
 
 body{
     position: relative;
+    /* background-color: var(--background-color); */
+}
+
+input , textarea , select , option{
+    background-color: transparent;
 }

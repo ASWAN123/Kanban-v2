@@ -11,12 +11,13 @@ import { Dropdown } from './Dropdown';
 function TaskForm(){
 
     const { setshowWarning  , hide  , setHide , defaultboard , showTaskForm ,setDefaultboard , boards , setboards , setShowTaskForm } = useContext(boardsContext)
-    let obj = {id:Date.now() , title:'' , description:'' ,status:defaultboard.columns[0].name ,statusId:defaultboard.columns[0].id ,subtasks:[{title:'',isCompleted:false}]}
+    let obj = {id:'T'+Date.now() , title:'' , description:'' ,status:defaultboard.columns[0].name ,statusId:defaultboard.columns[0].id ,subtasks:[{title:'',isCompleted:false}]}
     let Task = showTaskForm.order == 'add'  ? obj : showTaskForm.mytask ; 
     const [NewTask , setNewTask] = useState({...Task}) ; 
     const [ sumbitchanges , setsubmitchanges ] = useState(false) ; 
     const [controlmenu , setControlMenu] = useState(false) ;
-    
+    let [validation  ,  setValidation] = useState(false)
+    let [columnvalidate , setColumnValidate] = useState(99)
 
     const AddSubtaskColumn =(e)=> {
         e.preventDefault()
@@ -36,6 +37,25 @@ function TaskForm(){
 
     const pushmyTask = (e)=> {
         e.preventDefault()
+        if(NewTask.title.trim()==''){
+            setTimeout(()=> {
+                setValidation(false)
+            } , 4000)
+            setValidation(true)
+            
+            return ;
+        }
+
+        let checker  = NewTask.subtasks.filter((subtask , index)=> subtask.title.trim() == '')
+        if (checker.length > 0){
+            setColumnValidate(0)
+            setTimeout(()=> {
+                setColumnValidate(99)
+            } , 4000)
+            return ;
+        }
+
+
         if(showTaskForm.order  == 'add'){
             let NewColumns = [...defaultboard.columns].map((column)=> column.id == NewTask.statusId ? {...column , tasks:[NewTask , ...column.tasks ]} : column)
             setDefaultboard({...defaultboard , columns:NewColumns})
@@ -127,22 +147,32 @@ function TaskForm(){
         setShowTaskForm({...showTaskForm , show:true , title:'Edit Task' ,order:"edit"})
     }
 
+
+
     const deleteMethod = ()=>{
         setControlMenu(!controlmenu) ;
         setshowWarning({show:true ,title:NewTask.title , order:"Delete this Task?" , task:NewTask}) ;
         setShowTaskForm({...showTaskForm , show:false})
     }
 
+    const closemenu =(e)=> {
+        if(e.target.className == 'effects'){
+            console.log(e.target.className)
+            setShowTaskForm({...showTaskForm , show:false , title:'Edit Task' ,order:"edit"})
+        }
+    }
+
     return (
-        <div className='effects'  >
+        <div className='effects' onClick={(e)=>{closemenu(e)}} >
             <form className='taskform' onSubmit={(e)=> {pushmyTask(e)}}>
                 <p className='form-title'  >{showTaskForm.title}</p>
 
-                <FiMoreVertical className='mysettingIcon' onClick={()=> {setControlMenu(!controlmenu)}} />
-                { controlmenu && < Settingbuttons deleteMethod={deleteMethod } editMethod={editMethod} title={"Task"} /> }
+                { showTaskForm.order == 'view' && <FiMoreVertical className='mysettingIcon' onClick={()=> {setControlMenu(!controlmenu)}} /> }
+
+                { controlmenu  && < Settingbuttons myclass={"effects-setting-task"} setControlMenu={setControlMenu} controlmenu={controlmenu} deleteMethod={deleteMethod } editMethod={editMethod} title={"Task"} /> }
 
                 <div className={(showTaskForm.order == 'add' || showTaskForm.order=="edit" )? 'group':'group viewmode'}>
-                    <label htmlFor="title" >Title</label>
+                    <label htmlFor="title" >Title {validation && <span className='validation'>*Required </span>}</label>
                     <input 
                         value={NewTask.title} 
                         type="text"
@@ -164,7 +194,7 @@ function TaskForm(){
 
                 <div className='group'>
                     <label htmlFor="Subtasks">Subtasks</label>
-                    <Subtasks NewTask={NewTask} markasComplete = {markasComplete} updateSubtask={updateSubtask} deleteSubtask={deleteSubtask} />
+                    <Subtasks columnvalidate= {columnvalidate} NewTask={NewTask} markasComplete = {markasComplete} updateSubtask={updateSubtask} deleteSubtask={deleteSubtask} />
                 </div>
 
                 { NewTask.subtasks.length < 6 && showTaskForm.order != 'view' && <button type='button' className='addnewcolumn' onClick={(e)=>{ showTaskForm.order != 'view' ? AddSubtaskColumn(e) : setNewTask({...NewTask , statusId:e.target.value })}} >+Add New Subtasks</button>}

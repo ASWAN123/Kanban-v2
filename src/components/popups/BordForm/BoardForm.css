@@ -9,7 +9,7 @@
 }
 
 .boardform{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 15px;
     padding:20px 25px;
     min-width: 400px;
@@ -17,6 +17,8 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    background-color: var(--background-color);
+    box-shadow: 0px 0px 15px 1px var(--dark-color);
 }
 
 
@@ -28,27 +30,36 @@
 .group{
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 
 .group label{
     font-size: 18px;
     font-weight: 400;
+    position: relative;
+    letter-spacing: .1rem;
 }
 
 .group input{
     width: 95% ;
     height: 20px ;
-    border: 1px solid gainsboro ;
-    outline: none ;
+    border: 1px solid var(--input-border) ;
+    /* outline: none ; */
     font-size: 16px ;
     padding: 5px ;
     margin-top: 5px;
     border-radius: 10px;
+    background-color: var(--background-color);
+    letter-spacing: .1rem;
 }
 
 .group input:focus{
-    border: 1px solid lightskyblue;
+    border: 1px solid var(--input-border);
+}
+
+.group input::placeholder{
+    font-size: 14px;
 }
 
 .input-columns{
@@ -56,6 +67,7 @@
     display: flex;
     gap: 5px;
     align-items: center;
+    position: relative;
 }
 
 .closebutton {
@@ -70,6 +82,7 @@
     border-radius: 20px;
     cursor: pointer;
     border: none;
+    letter-spacing: 0.1rem;
 }
 
 .addnewcolumn{
@@ -78,11 +91,24 @@
 }
 
 .savebutton{
-    color: white;
-    background-color: lightskyblue;
+    color: var(--secondry-text-color);
+    background-color: var(--primary-button);
 }
 
 .withTasks{
     color: lightcoral;
     pointer-events:none ;
 }
+
+.validation{
+    color:lightcoral;
+    font-size: 12px;
+    position: absolute;
+    right: 0 ;
+    top: 0.3rem;
+}
+
+/* .input-columns input::placeholder{
+    color:lightcoral;
+    font-size: 12px;
+} */
