@@ -1,20 +1,21 @@
-.boards{
-    margin: 5px 10px ;
-    letter-spacing: 0.1rem;
-    color: var(--light-color);
+.boards {
+  margin: 10px 10px;
+  margin-top: 20px;
+  letter-spacing: 0.1rem;
+  color: var(--primary-text-color);
 }
 
-.leftside{
-    position: sticky;
-    min-width: 250px ;
-    max-height: calc(100vh - 79px) ;
-    /* border-right: 3px dashed black ;  */
-    /* border-bottom: 1px solid red; */
-    background-color: var(--leftside-color);
+.leftside {
+  position: sticky;
+  min-width: 250px;
+  max-height: calc(100vh - 79px);
+  border-right: 3px dashed var(--dark-color);
+  /* border-bottom: 1px solid red; */
+  background-color: var(--leftside-color);
 }
 
-.addboard{
-    /* border: none;
+.addboard {
+  /* border: none;
     background-color: transparent;
     font-size: 18px ;
     font-weight: bold ;
@@ -26,42 +27,38 @@
     margin-left: 10px ;
     letter-spacing: 0.1rem;
     color: var(--primary-text-color) ; */
-    background-color: var(--main-color);
-    font-size: 17px ;
-    padding: 10px 22px;
-    border-radius: 25px;
-    border: none;
-    font-weight: 400;
-    color: var(--dark-color);
-    /* margin-top: ; */
-    margin-bottom: 10px;
-    margin-left: 10px;
-    /* margin-right: 5px; */
-    cursor: pointer;
-    letter-spacing: 0.1rem;
-    border-radius: 0 25px 25px 0 ;
+  background-color: var(--primary-button);
+  font-size: 17px;
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 400;
+  color: var(--light-color);
+  /* margin-top: ; */
+  margin-bottom: 10px;
+  margin-left: 10px;
+  /* margin-right: 5px; */
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  border-radius: 0 25px 25px 0;
 }
 
-.addboard:hover{
-    color: var(--primary-text-color) ;
-    opacity: 0.5;
+.addboard:hover {
+  color: var(--primary-text-color);
+  opacity: 0.5;
 }
-
-
 
 .hide-left-side {
-    /* border: 1px solid black; */
-    width: 200px;
-    margin: auto;
-    margin-top: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--light-color);
-    font-size:16px ;
-    letter-spacing: 0.1rem;
-    cursor: pointer;
+  /* border: 1px solid black; */
+  width: 200px;
+  margin: auto;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--light-color);
+  font-size: 16px;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
 }
-
-

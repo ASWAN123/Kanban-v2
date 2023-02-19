@@ -13,9 +13,22 @@ function Rightside() {
         setboards(Newboards)
     } , [defaultboard])
 
+
+    const createClicked = ()=> {
+        setShowBoardForm({
+            title:'Add New Board' ,
+            order :'create',
+            show:true,
+          })
+    }
+
     return (
         <div className='rightside'>
-            <Columns  />
+            {boards.length > 0 &&  <Columns  /> }
+            { boards.length == 0 && <div className='nothing'>
+                <p>This board is empty. Create a new column to get started.</p>
+                <button className='firstboard' onClick={()=> {createClicked()}} >+ Create New Board</button> 
+                </div> }
         </div>
     )
 }

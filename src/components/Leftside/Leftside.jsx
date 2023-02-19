@@ -17,10 +17,10 @@ function Leftside() {
 
 
     return (
-        <div className='leftside'>
-            <p className='boards'>All Boards ({boards.length})</p>
-            <button className='addboard' onClick={()=> {createClicked()}} >+ Create New Board</button>
-            <Boardslist />
+        <div className='leftside'> 
+            <p className='boards'>All Boards ({boards.length})</p> 
+            <button className='addboard' onClick={()=> {createClicked()}} >+ Create New Board</button> 
+            {boards.length > 0 && <Boardslist /> } 
             
         </div>
     )

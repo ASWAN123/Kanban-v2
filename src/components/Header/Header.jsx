@@ -27,13 +27,13 @@ function Header() {
         <div className='header'>
             <Logo />
             <div className='header-menu'>
-                <div className='board-title'>{defaultboard.name}</div>
-                <button className='button-add-task'onClick={()=>{setShowTaskForm({show:true , title:'Add New Task' , order:'add'})}}>+ Add New Task</button>
+                { boards.length > 0 && <div className='board-title'>{defaultboard.name}</div>}
+                <button disabled={ boards.length > 0 ? false:true } className='button-add-task'onClick={()=>{setShowTaskForm({show:true , title:'Add New Task' , order:'add'})}}>+ Add New Task</button>
 
                 <div  className='light-dark'>
                     { (theme == 'light' ? <BsCloudMoonFill onClick={()=> setTheme( (theme == "light") ? 'dark':'light' )} className='moon' />  : <BsCloudSunFill className='sun' onClick={()=> setTheme( (theme == "light") ? 'dark':'light' )} />) }</div>
                 
-                <FiMoreVertical className='mysettingIcon' onClick={()=> {setControlMenu(!controlmenu)}} />
+                { boards.length > 0 && <FiMoreVertical disabled={ boards.length > 0 ? false:true } className='mysettingIcon' onClick={()=> {setControlMenu(!controlmenu)}} /> }
                 
                 { controlmenu && <Settingbuttons myclass={'effects-setting'} setControlMenu={setControlMenu} controlmenu={controlmenu} editMethod={editMethod} deleteMethod={deleteMethod } title={"Board"}/> }
 

@@ -12,11 +12,23 @@ import { getboards } from './data/data' ;
 import useLocalStorage from "use-local-storage";
 
 function App() {
-
-  const [boards , setboards] = useState(getboards())
-  const [defaultboard , setDefaultboard ] = useState(boards[0])
-  const [theme, setTheme] = useLocalStorage("theme" ? 'dark':'light');
   
+  const [data , setData] = useLocalStorage("data", getboards());
+  if(data.length == 0){
+    setData(getboards())
+  }
+
+
+  const [boards , setboards ] = useState(data)
+  
+  useEffect(()=> {
+    setData(boards)
+  } , [boards])
+
+  const [defaultboard , setDefaultboard ] = useState(boards[0])
+
+
+  const [theme, setTheme] = useLocalStorage("theme" ? 'dark':'light');
   const [showBoardForm , setShowBoardForm] = useState({
     title:'' ,
     order :'',
@@ -30,8 +42,9 @@ function App() {
   })
 
   useEffect(()=> {
-    console.log(defaultboard  , 'updated')
-  } , [defaultboard])
+    let newboards = boards.map((board)=> board.id == defaultboard.id ? defaultboard : board)
+    setData(newboards)
+  } , [ defaultboard ])
 
 
   const [showwarning , setshowWarning ] = useState({show:false , title:'' , order:''})

@@ -1,112 +1,111 @@
-.effects{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.effects {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.boardform{
-    /* border: 1px solid black; */
-    border-radius: 15px;
-    padding:20px 25px;
-    min-width: 400px;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background-color: var(--background-color);
-    box-shadow: 0px 0px 15px 1px var(--dark-color);
+.boardform {
+  /* border: 1px solid black; */
+  border-radius: 15px;
+  padding: 20px 25px;
+  min-width: 400px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 15px 1px var(--dark-color);
 }
 
-
-.form-title{
-    font-size: 20px;
-    font-weight: bold;
-    margin: 5px;
+.form-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
 }
-.group{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-
-.group label{
-    font-size: 18px;
-    font-weight: 400;
-    position: relative;
-    letter-spacing: .1rem;
+.group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
-.group input{
-    width: 95% ;
-    height: 20px ;
-    border: 1px solid var(--input-border) ;
-    /* outline: none ; */
-    font-size: 16px ;
-    padding: 5px ;
-    margin-top: 5px;
-    border-radius: 10px;
-    background-color: var(--background-color);
-    letter-spacing: .1rem;
-    color: var(--primary-text-color);
+.group label {
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+  letter-spacing: 0.1rem;
 }
 
-.group input:focus{
-    border: 1px solid var(--input-border);
+.group input {
+  width: 95%;
+  height: 20px;
+  border: 1px solid var(--input-border);
+  /* outline: none ; */
+  font-size: 16px;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 10px;
+  background-color: var(--background-color);
+  letter-spacing: 0.1rem;
+  color: var(--primary-text-color);
 }
 
-.group input::placeholder{
-    font-size: 14px;
+.group input:focus {
+  border: 1px solid var(--input-border);
 }
 
-.input-columns{
-    width: 100%;
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    position: relative;
+.group input::placeholder {
+  font-size: 14px;
+}
+
+.input-columns {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  position: relative;
 }
 
 .closebutton {
-    font-size: 20px;
-    cursor: pointer;
+  font-size: 20px;
+  cursor: pointer;
+  color: darkgray;
 }
 
-
-.addnewcolumn , .savebutton{
-    margin: 5px;
-    padding: 10px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    border: none;
-    letter-spacing: 0.1rem;
+.addnewcolumn,
+.savebutton {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.1rem;
 }
 
-.addnewcolumn{
-    color: black;
-    background-color: lightgray;
+.addnewcolumn {
+  color: black;
+  background-color: lightgray;
 }
 
-.savebutton{
-    color: var(--secondry-text-color);
-    background-color: var(--primary-button);
+.savebutton {
+  color: var(--secondry-text-color);
+  background-color: var(--primary-button);
 }
 
-.withTasks{
-    color: lightcoral;
-    pointer-events:none ;
+.withTasks {
+  color: lightcoral;
+  pointer-events: none;
 }
 
-.validation{
-    color:lightcoral;
-    font-size: 12px;
-    position: absolute;
-    right: 0 ;
-    top: 0.3rem;
+.validation {
+  color: lightcoral;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0.3rem;
 }
 
 /* .input-columns input::placeholder{
