@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.9b0a9275.css",
-    "main.js": "/static/js/main.a64267c5.js",
-    "static/js/787.5d7b65c0.chunk.js": "/static/js/787.5d7b65c0.chunk.js",
-    "index.html": "/index.html",
-    "main.9b0a9275.css.map": "/static/css/main.9b0a9275.css.map",
-    "main.a64267c5.js.map": "/static/js/main.a64267c5.js.map",
-    "787.5d7b65c0.chunk.js.map": "/static/js/787.5d7b65c0.chunk.js.map"
+    "main.css": "/Kanban-v2/static/css/main.9b0a9275.css",
+    "main.js": "/Kanban-v2/static/js/main.8897cec9.js",
+    "static/js/787.5d7b65c0.chunk.js": "/Kanban-v2/static/js/787.5d7b65c0.chunk.js",
+    "index.html": "/Kanban-v2/index.html",
+    "main.9b0a9275.css.map": "/Kanban-v2/static/css/main.9b0a9275.css.map",
+    "main.8897cec9.js.map": "/Kanban-v2/static/js/main.8897cec9.js.map",
+    "787.5d7b65c0.chunk.js.map": "/Kanban-v2/static/js/787.5d7b65c0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9b0a9275.css",
-    "static/js/main.a64267c5.js"
+    "static/js/main.8897cec9.js"
   ]
 }
