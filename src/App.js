@@ -28,7 +28,7 @@ function App() {
   const [defaultboard , setDefaultboard ] = useState(boards[0])
 
 
-  const [theme, setTheme] = useLocalStorage("theme" ? 'dark':'light');
+  const [theme, setTheme] = useLocalStorage('light');
   const [showBoardForm , setShowBoardForm] = useState({
     title:'' ,
     order :'',
