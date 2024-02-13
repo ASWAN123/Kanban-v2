@@ -478,7 +478,7 @@ const data =  [
     ]
 
 export const getboards= ()=> {
-    // let boards = JSON.parse(localStorage.getItem("data"))
+    // let boards = JSON.parse(localStorage.getItem("datakanban"))
     // if(boards == null ||  boards.length== 0 ){
     //     localStorage.setItem('data' , JSON.stringify(data))
     //     return data
