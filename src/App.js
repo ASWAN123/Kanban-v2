@@ -13,7 +13,7 @@ import useLocalStorage from "use-local-storage";
 
 function App() {
   
-  const [data , setData] = useLocalStorage("data", getboards());
+  const [data , setData] = useLocalStorage("datakanban", getboards());
   if(data.length == 0){
     setData(getboards())
   }
